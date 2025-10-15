@@ -1,48 +1,22 @@
-'''YAML
-
-\###### AWS CLOUD FOUNDATION - ALEXSANDRO LECHNER
-
+```yaml
+###### AWS CLOUD FOUNDATION - ALEXSANDRO LECHNER
 Description: Instalar Servidor Apache
-
 Resources:
-
-&nbsp; MinhaInstancia:
-
-&nbsp;   Type: AWS::EC2::Instance
-
-&nbsp;   Properties:
-
-&nbsp;     AvailabilityZone: us-east-1a
-
-&nbsp;     ImageId: ami-0ed9277fb7eb570c9
-
-&nbsp;     InstanceType: t2.micro
-
-&nbsp;     Tags :
-
-&nbsp;       - Key: "Name"
-
-&nbsp;         Value: "Webserver-Apache"
-
-&nbsp;     UserData:
-
-&nbsp;       Fn::Base64:
-
-&nbsp;         !Sub |
-
-&nbsp;           #!/bin/bash -xe
-
-&nbsp;           yum install -y httpd.x86\_64
-
-&nbsp;           systemctl start httpd.service
-
-&nbsp;           systemctl enable httpd.service
-
-&nbsp;           echo "<h1>OLA AWS FOUNDATIONS do $(hostname -f)</h1>" > /var/www/html/index.html
-
-
-
-'''
-
-
-
+  MinhaInstancia:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      ImageId: ami-0ed9277fb7eb570c9
+      InstanceType: t2.micro
+      Tags :
+        - Key: "Name"
+          Value: "Webserver-Apache"
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash -xe
+            yum install -y httpd.x86_64
+            systemctl start httpd.service
+            systemctl enable httpd.service
+            echo "<h1>OLA AWS FOUNDATIONS do $(hostname -f)</h1>" > /var/www/html/index.html
+```
