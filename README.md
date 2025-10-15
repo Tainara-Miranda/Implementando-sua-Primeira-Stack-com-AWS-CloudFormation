@@ -9,7 +9,6 @@ Para este desafio, seguiu-se alguns templates para automatização de infraestru
 + instâncias EC2
 + configuração de servidores web
 + Aplicações de regras de segurança
-+ Criação de usuários
 
 📔 Neste repositório você irá encontrar:
 
